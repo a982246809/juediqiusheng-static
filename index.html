@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="fonticon/font.css" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/fullpage.min.css" />
+    <style>
+      .section {
+        text-align: center;
+        font: 50px "Microsoft Yahei";
+        color: #fff;
+        background-color: black;
+      }
+    </style>
+    <script src="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
+    <!-- 整页滚动 -->
+    <!-- <script src="js/fullpage.js"></script> -->
+    <!-- <script src="https://cdn.dowebok.com/77/js/jquery.fullPage.min.js"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.extensions.min.js"></script>
+    <!-- 伸缩布局 -->
+    <script src="./node_modules/amfe-flexible/index.js"></script>
+    <script>
+      $(function () {
+        $("#dowebok").fullpage({
+          v2compatible: true,
+          verticalCentered: true,
+          sectionsColor: [
+            "#f90",
+            "pink",
+            "#4BBFC3",
+            "black",
+            "#4BBFC3",
+            "#f90",
+          ],
+          // navigation: true,
+          anchors: ["page1", "page2", "page3", "page4", "page5", "page6"],
+          menu: "#nav",
+          afterLoad: function (anchorLink, index) {
+            // console.log("afterLoad--" + "anchorLink: " + anchorLink + " index: " + index);
+            if (index == 1) {
+              let tb = document.querySelector(".topBlank");
+              tb.style.display = "block";
+              let nav = document.querySelector("#nav");
+              nav.style.display = "none";
+            }
+          },
+          onLeave: function (index, nextIndex, direction) {
+            // console.log("onLeave--" + "index: " + index + " nextIndex: " + nextIndex + " direction: " +
+            //   direction);
+            if (index == 1) {
+              let tb = document.querySelector(".topBlank");
+              tb.style.display = "none";
+              let nav = document.querySelector("#nav");
+              nav.style.display = "block";
+            }
+            // if (nextIndex == 2) {
+            //   let nav = document.querySelector("#nav");
+            //   nav.style.display = "block";
+            // }
+          },
+        });
+      });
+    </script>
+    <script src="./js/juedi.js"></script>
+  </head>
+
+  <body>
+    <!-- 顶部白广告 -->
+    <header class="topBlank">
+      <ul>
+        <li class="logo_bgc"><a href="#"></a></li>
+        <li>
+          <a href="#"><img src="images/guanggao.jpg" alt="" /></a>
+        </li>
+        <li class="iconfont icon-xia">腾讯游戏排行榜</li>
+        <li>成长守护平台</li>
+      </ul>
+    </header>
+    <!-- 顶部导航 -->
+    <nav class="topNav">
+      <!-- logo -->
+      <a href="#" class="gameLogo"></a>
+      <!-- 导航 -->
+      <ul>
+        <li><a href="#">官网首页</a></li>
+        <li><a href="#">绑定查询</a></li>
+        <li><a style="color: #e69800;" href="#">国服预约</a></li>
+        <li><a style="color: #e69800;" href="#">老兵绑定</a></li>
+        <li><a href="#">游戏特色</a></li>
+        <li><a href="#">社区APP</a></li>
+        <li><a href="#">网吧认证</a></li>
+      </ul>
+      <!-- 入官网 -->
+      <a class="btn_enter" href="#">进入官网</a>
+    </nav>
+    <!-- 主体部分 -->
+
+    <!-- 导航栏 -->
+    <nav id="nav">
+      <ul>
+        <!-- <li data-menuanchor="page1" class="active"><a href="#page1">上</a></li> -->
+        <li class="active"><a href="#page1"></a></li>
+        <li data-menuanchor="page2"><a href="#page2">N</a></li>
+        <li data-menuanchor="page3"><a href="#page3">NE</a></li>
+        <li data-menuanchor="page4"><a href="#page4">E</a></li>
+        <li data-menuanchor="page5"><a href="#page5">SE</a></li>
+        <li data-menuanchor="page6"><a href="#page6">S</a></li>
+        <li><a></a></li>
+      </ul>
+    </nav>
+
+    <!-- 滚动小图标i -->
+    <div scroll_tip></div>
+    <div id="dowebok">
+      <!-- 主体部分1 -->
+      <div class="section sec1">
+        <video
+          data-autoplay
+          id="video1"
+          class="video"
+          src="video/1022_5dad5415ceb249339a0bf9662bfd414e.f0.mp4"
+          autoplay
+          loop
+          muted
+        ></video>
+        <a class="play_video spriteTu" href="#"> </a>
+        <img class="logo_b" src="images/logo_b.png" />
+      </div>
+      <!-- 主体部分2 -->
+      <div class="section sec2">
+        <video
+          id="video1"
+          class="video"
+          src="video/2.mp4"
+          data-autoplay
+          loop
+          muted
+        ></video>
+        <h1 class="title">
+          <span class="t1 spriteTu"></span>
+          <span class="t2 spriteTu"></span>
+          <p>连呼吸都必须小心翼翼，前所未有的紧张刺激体验</p>
+        </h1>
+      </div>
+
+      <!-- 主体部分3 -->
+      <div class="section sec3">
+        <video
+          data-autoplay
+          id="video1"
+          class="video"
+          src="video/3.mp4"
+          autoplay
+          loop
+          muted
+        ></video>
+        <h1 class="title">
+          <span class="t1 spriteTu"></span>
+          <span class="t2 spriteTu"></span>
+          <p>真实的射击体验，多种枪械与配件，眼观六路耳听八方</p>
+        </h1>
+      </div>
+      <!-- 主体部分4 -->
+      <div class="section sec4">
+        <h1 class="title spriteTu"></h1>
+        <ul>
+          <li>
+            <img style="right: 0;" src="./images/img_weather1.jpg" alt="" />
+            <h2 class="title_sub">雨天</h2>
+          </li>
+          <li>
+            <img src="./images/img_weather2.jpg" alt="" />
+            <h2 class="title_sub">晴天</h2>
+          </li>
+          <li>
+            <img src="./images/img_weather3.jpg" alt="" />
+            <h2 class="title_sub">雾天</h2>
+          </li>
+        </ul>
+      </div>
+      <!-- 主体部分5 -->
+      <div class="section sec5">
+        <video
+          data-autoplay
+          id="video1"
+          class="video"
+          src="video/4.mp4"
+          autoplay
+          loop
+          muted
+        ></video>
+        <h1 class="title">
+          <span class="t1 spriteTu"></span>
+          <span class="t2 spriteTu"></span>
+          <p>丰富载具，团队合作，好友开黑</p>
+        </h1>
+      </div>
+      <!-- 主体部分6 -->
+      <div class="section sec6">
+        <h1 class="title spriteTu"></h1>
+        <span>时刻变化的随机因素，制定最优策略</span>
+      </div>
+      <!-- foot -->
+      <div class="section fp-auto-height">
+        <div class="footer">
+          <a class="tencent"><img src="./images/foot-dark.png" alt="" /></a>
+          <a></a>
+          <div>
+            <ul>
+              <li>
+                <!-- 腾讯互动娱乐|服务条款|隐私保护指引|儿童隐私保护指引|腾讯游戏招聘|腾讯游戏客服|游戏列表|广告服务及商务合作 -->
+                <a href="#">腾讯互动娱乐</a>
+                <span>|</span>
+                <a href="#">服务条款</a>
+                <span>|</span>
+                <a href="#">隐私保护指引</a>
+                <span>|</span>
+                <a href="#">儿童隐私保护指引</a>
+                <span>|</span>
+                <a href="#">腾讯游戏招聘</a>
+                <span>|</span>
+                <a href="#">腾讯游戏客服</a>
+                <span>|</span>
+                <a href="#">游戏列表</a>
+                <span>|</span>
+                <a href="#">广告服务及商务合作</a>
+                <span>|</span>
+              </li>
+              <li><a href="#">腾讯公司版权所有</a></li>
+              <li>COPYRIGHT © 1998 - 2020 TENCENT. ALL RIGHTS RESERVED.</li>
+              <li>©PUBG Corporation. All rights reserved.</li>
+              <li>
+                <img
+                  src="https://game.gtimg.cn/images/js/2018foot/logo/gswj.png"
+                  alt=""
+                />
+                工商网监电子标识
+                |粤网文[2017]6138-1456号|（总）网出证（粤）字第057号
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
